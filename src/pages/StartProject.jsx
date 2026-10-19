@@ -15,7 +15,7 @@ const OPTIONS = {
   ],
   budget: ['Under $500', '$500 – $1,500', '$1,500 – $5,000', '$5,000 – $10,000', '$10,000+'],
   timeline: ['Less than 1 month', '1–3 months', '3–6 months', '6+ months', 'Flexible'],
-  source: ['Instagram', 'LinkedIn', 'Dribbble', 'Twitter / X', 'Referral', 'Google search', 'Other'],
+  source: ['Instagram', 'Twitter / X', 'Referral', 'Google search', 'Other'],
 }
 
 const EMPTY = {
