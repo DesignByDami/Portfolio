@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import { Button, Icon, Logo, Sticker, Display } from './ui'
 import { EMAIL, NAV_LINKS, SOCIALS } from '../data/site'
+import useScrollReveal from './useScrollReveal'
 
 function Nav({ onOpenMenu }) {
   return (
@@ -131,6 +132,8 @@ function ScrollManager() {
 
 export default function Layout({ cta = true }) {
   const [menuOpen, setMenuOpen] = useState(false)
+  const { pathname } = useLocation()
+  useScrollReveal(pathname)
   return (
     <>
       <ScrollManager />
