@@ -2,7 +2,7 @@
 export const EMAIL = 'info@damidesigns.com'
 
 // International format without "+" or spaces (wa.me requirement).
-export const WHATSAPP_NUMBER = '2349040071855'
+export const WHATSAPP_NUMBER = '2349040071843'
 
 // Served from public/ — exported from the "CV / A4 print" frames in Figma.
 export const CV_PDF_URL = '/Damilola-Olowo-CV.pdf'
