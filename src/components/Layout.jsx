@@ -40,7 +40,7 @@ function MobileMenu({ open, onClose }) {
   return (
     <div className="menu" role="dialog" aria-modal="true" aria-label="Menu">
       <div className="menu__top">
-        <Logo size="sm" inverse onClick={onClose} />
+        <Logo size="sm" onDark onClick={onClose} />
         <button type="button" className="menu__close" onClick={onClose} aria-label="Close menu">
           <Icon src="/assets/icon-close.svg" size={20} />
         </button>
@@ -97,7 +97,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer__brand">
-        <span className="logo__mark logo__mark--sm">d</span>
+        <Logo size="xs" />
         <span>Based in Abuja, Nigeria</span>
       </div>
       <nav className="footer__social" aria-label="Social">

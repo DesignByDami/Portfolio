@@ -74,11 +74,11 @@ export function BackLink({ to = '/', children }) {
   )
 }
 
-export function Logo({ size = 'lg', inverse, to = '/', onClick }) {
+// `onDark` sets the logo on a light pill so the black artwork stays visible.
+export function Logo({ size = 'lg', onDark, to = '/', onClick }) {
   return (
-    <Link to={to} className={`logo logo--${size}${inverse ? ' logo--inverse' : ''}`} onClick={onClick} aria-label="damidesigns — home">
-      <span className="logo__mark">d</span>
-      <span className="logo__word">damidesigns</span>
+    <Link to={to} className={`logo logo--${size}${onDark ? ' logo--on-dark' : ''}`} onClick={onClick}>
+      <img src="/logo.png" alt="Dami Design — home" width="864" height="320" />
     </Link>
   )
 }

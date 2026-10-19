@@ -385,40 +385,20 @@ main {
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  flex-shrink: 0;
 }
-.logo__mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  background: var(--ink);
-  color: var(--sage);
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 30px;
-  line-height: 1;
-  padding-bottom: 4px;
+.logo img {
+  width: auto;
+  height: 60px;
 }
-.logo__mark--sm {
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  font-size: 24px;
-  padding-bottom: 3px;
+.logo--sm img { height: 44px; }
+.logo--xs img { height: 34px; }
+.logo--on-dark {
+  padding: 4px 12px;
+  background: var(--paper);
+  border-radius: 14px;
 }
-.logo__word {
-  font-weight: 800;
-  font-size: 22px;
-  letter-spacing: -0.03em;
-}
-.logo--sm { gap: 8px; }
-.logo--sm .logo__mark { width: 34px; height: 34px; border-radius: 10px; font-size: 26px; }
-.logo--sm .logo__word { font-size: 19px; }
-.logo--inverse .logo__mark { background: var(--sage); color: var(--ink); }
-.logo--inverse .logo__word { color: var(--white); }
+.logo--on-dark img { height: 36px; }
 
 .nav__links {
   display: flex;
@@ -1810,9 +1790,8 @@ textarea.input {
 
   .nav { background: var(--paper); }
   .nav__inner { padding: 16px; }
-  .logo { gap: 8px; }
-  .logo__mark { width: 34px; height: 34px; border-radius: 10px; font-size: 26px; }
-  .logo__word { font-size: 19px; }
+  .nav .logo img { height: 44px; }
+  .logo--on-dark img { height: 36px; }
 
   .btn--lg { padding: 16px 23px; font-size: 16px; }
   .btn--block.btn--lg,
