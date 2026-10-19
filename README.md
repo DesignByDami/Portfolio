@@ -37,6 +37,5 @@ The project form doesn't store anything. Submitting opens WhatsApp (`wa.me`) wit
 
 ## Before launch
 
-- [ ] Add the Dribbble profile URL in `src/data/site.js` (it stays hidden until then).
 - [ ] Review the FAQ answers. Only the first answer comes from the design; I wrote the other four.
 - [ ] Hosting needs an SPA fallback so deep links like `/work/folio` serve `index.html`.
