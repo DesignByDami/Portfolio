@@ -8,11 +8,10 @@ export const WHATSAPP_NUMBER = '2349040071855'
 export const CV_PDF_URL = '/Damilola-Olowo-CV.pdf'
 
 // Entries without an href are hidden in the footer until a URL is added.
-// TODO: add Dribbble and LinkedIn profile URLs.
+// TODO: add the Dribbble profile URL.
 export const SOCIALS = [
   { label: 'Dribbble', short: 'Dribbble', href: '' },
   { label: 'Instagram', short: 'Instagram', href: 'https://www.instagram.com/damidesign__/' },
-  { label: 'LinkedIn', short: 'LinkedIn', href: '' },
   { label: 'Twitter / X', short: 'X', href: 'https://x.com/damidesign_' },
 ]
 
