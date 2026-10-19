@@ -637,6 +637,59 @@ main {
   max-width: none;
 }
 
+/* --- Hero motion -------------------------------------------------------
+   Words and blocks rise in on a ~90ms stagger (--i); the illustration
+   settles, then floats, and leans toward the pointer (--px/--py set in JS).
+   Base styles are the final state, so reduced-motion users see it at once. */
+.hero-word {
+  display: inline-block;
+  animation: hero-word 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: calc(0.15s + var(--i) * 90ms);
+}
+.hero-in {
+  animation: hero-rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: calc(0.15s + var(--i) * 90ms);
+}
+@keyframes hero-word {
+  from {
+    opacity: 0;
+    transform: translateY(0.45em) rotate(2deg);
+    filter: blur(8px);
+  }
+}
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+.hero__parallax,
+.hero__float {
+  position: absolute;
+  inset: 0;
+}
+.hero__visual {
+  animation: hero-visual 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) 0.35s both;
+}
+.hero__parallax {
+  transform: translate3d(var(--px, 0px), var(--py, 0px), 0);
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.hero__float {
+  animation: hero-float 7s ease-in-out 1.6s infinite;
+}
+@keyframes hero-visual {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96) rotate(-1.5deg);
+  }
+}
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(0.4deg); }
+}
+
 .clients {
   display: flex;
   flex-direction: column;

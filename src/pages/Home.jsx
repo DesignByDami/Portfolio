@@ -1,3 +1,4 @@
+import { Fragment, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Chip, Display, Icon, SectionHead, Sticker } from '../components/ui'
 import Faq from '../components/Faq'
@@ -69,35 +70,106 @@ const SERVICES = [
 ]
 const SERVICES_SHORT = ['UI/UX & mobile app design', 'Web apps & design systems', 'Brand identity', 'Frontend & full product']
 
+// Headline words, revealed one by one. `br` marks the desktop-only line break.
+const HERO_WORDS = [
+  { text: 'Product' },
+  { text: 'design', br: true },
+  { text: 'that' },
+  { text: 'feels' },
+  { text: 'obvious.', serif: true },
+]
+
+// Nudges the illustration toward the pointer (mouse/trackpad only).
+function usePointerParallax(strength = 14) {
+  const ref = useRef(null)
+  useEffect(() => {
+    const el = ref.current
+    const canHover = window.matchMedia('(pointer: fine)').matches
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (!el || !canHover || reduced) return
+
+    let frame = 0
+    const onMove = (e) => {
+      cancelAnimationFrame(frame)
+      frame = requestAnimationFrame(() => {
+        const r = el.getBoundingClientRect()
+        const x = (e.clientX - r.left) / r.width - 0.5
+        const y = (e.clientY - r.top) / r.height - 0.5
+        el.style.setProperty('--px', `${(x * strength).toFixed(1)}px`)
+        el.style.setProperty('--py', `${(y * strength).toFixed(1)}px`)
+      })
+    }
+    const onLeave = () => {
+      cancelAnimationFrame(frame)
+      el.style.setProperty('--px', '0px')
+      el.style.setProperty('--py', '0px')
+    }
+    el.addEventListener('pointermove', onMove)
+    el.addEventListener('pointerleave', onLeave)
+    return () => {
+      cancelAnimationFrame(frame)
+      el.removeEventListener('pointermove', onMove)
+      el.removeEventListener('pointerleave', onLeave)
+    }
+  }, [strength])
+  return ref
+}
+
 function Hero() {
+  const sectionRef = usePointerParallax()
+  const fullTitle = HERO_WORDS.map((w) => w.text).join(' ')
+  // Delay (in steps of ~90ms) for the elements that follow the headline.
+  const after = HERO_WORDS.length + 1
+
   return (
-    <section className="hero">
+    <section className="hero" ref={sectionRef}>
       <div className="hero__copy">
-        <div className="availability">
+        <div className="availability hero-in" style={{ '--i': 0 }}>
           <img src="/assets/avail-dots.svg" width="68" height="28" alt="" aria-hidden="true" className="availability__dots" />
           <span>Available for new projects</span>
           <img src="/assets/avail-ellipse.svg" width="8" height="8" alt="" aria-hidden="true" className="availability__pulse" />
         </div>
-        <Display as="h1" parts={['Product design\nthat feels ', 'obvious.']} className="display--hero" />
-        <p className="hero__lede">
+        <h1 className="display display--hero" aria-label={fullTitle}>
+          {HERO_WORDS.map((w, i) => {
+            const word = (
+              <span className="hero-word" style={{ '--i': i + 1 }} aria-hidden="true">
+                {w.text}
+              </span>
+            )
+            return (
+              <Fragment key={w.text}>
+                {w.serif ? <em>{word}</em> : word}
+                {i < HERO_WORDS.length - 1 && ' '}
+                {w.br && <br className="br-desk" />}
+              </Fragment>
+            )
+          })}
+        </h1>
+        <p className="hero__lede hero-in" style={{ '--i': after }}>
           I'm Damilola — a product designer in Abuja helping startups turn ambiguous ideas into apps, dashboards and sites people use without thinking twice.
         </p>
-        <div className="hero__actions">
+        <div className="hero__actions hero-in" style={{ '--i': after + 1 }}>
           <Button to="/#work" icon="arrow-white-lg">See my work</Button>
           <Button to="/cv" variant="light" icon="arrow-ink">View my CV</Button>
         </div>
-        <p className="hero__note">Currently designing for Sunflex Ride, Tycoon and WorkSyncAfrica</p>
+        <p className="hero__note hero-in" style={{ '--i': after + 2 }}>
+          Currently designing for Sunflex Ride, Tycoon and WorkSyncAfrica
+        </p>
       </div>
       <div className="hero__visual">
-        <picture>
-          <source media="(max-width: 720px)" srcSet="/assets/hero-visual-mobile.png" />
-          <img
-            src="/assets/hero-visual.png"
-            alt="Device mockups of the folio bookstore, Novastrum trading app and WorkSyncAfrica hiring app"
-            width="692"
-            height="651"
-          />
-        </picture>
+        <div className="hero__parallax">
+          <div className="hero__float">
+            <picture>
+              <source media="(max-width: 720px)" srcSet="/assets/hero-visual-mobile.png" />
+              <img
+                src="/assets/hero-visual.png"
+                alt="Device mockups of the folio bookstore, Novastrum trading app and WorkSyncAfrica hiring app"
+                width="692"
+                height="651"
+              />
+            </picture>
+          </div>
+        </div>
       </div>
     </section>
   )
