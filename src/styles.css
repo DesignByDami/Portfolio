@@ -873,15 +873,13 @@ a.work-card__aside:hover { color: var(--teal); }
   border: 3px solid var(--ink);
   border-radius: 40px;
 }
-.portrait__letter {
+.portrait__photo {
   position: absolute;
-  left: 104px;
-  top: -36px;
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 460px;
-  line-height: normal;
-  user-select: none;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
 }
 .portrait__sticker {
   position: absolute;
@@ -1898,7 +1896,7 @@ textarea.input {
     height: 360px;
     border-radius: 32px;
   }
-  .portrait__letter { left: 50%; transform: translateX(-50%); top: -10px; font-size: 300px; }
+  .portrait__photo { object-position: 50% 38%; }
   .portrait__sticker { right: 14px; bottom: 14px; width: 64px; height: 64px; }
   .about__card { padding: 0; background: none; gap: 16px; }
   .display--about { font-size: 40px; }

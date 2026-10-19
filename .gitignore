@@ -2,3 +2,6 @@ node_modules
 dist
 .DS_Store
 .vercel
+
+# Raw uploads — keep processed copies in public/ or brand/
+WhatsApp Image *

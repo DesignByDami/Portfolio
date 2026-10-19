@@ -261,8 +261,18 @@ function About() {
   return (
     <section className="section about" id="about">
       <div className="about__top">
-        <div className="portrait" role="img" aria-label="Portrait placeholder for Damilola Olowo">
-          <span className="portrait__letter" aria-hidden="true">D</span>
+        <div className="portrait">
+          <picture>
+            <source srcSet="/assets/damilola-portrait.webp" type="image/webp" />
+            <img
+              className="portrait__photo"
+              src="/assets/damilola-portrait.jpg"
+              alt="Damilola Olowo"
+              width="853"
+              height="1280"
+              loading="lazy"
+            />
+          </picture>
           <Sticker src="/assets/sticker-smile-about.svg" size={96} rotate={10} className="portrait__sticker" />
           <span className="portrait__tag d-only">Damilola Olowo · Abuja</span>
         </div>
