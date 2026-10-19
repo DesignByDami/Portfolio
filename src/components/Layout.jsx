@@ -101,7 +101,7 @@ function Footer() {
         <span>Based in Abuja, Nigeria</span>
       </div>
       <nav className="footer__social" aria-label="Social">
-        {SOCIALS.map((s) => (
+        {SOCIALS.filter((s) => s.href).map((s) => (
           <a key={s.label} href={s.href} target="_blank" rel="noreferrer">
             <span className="d-only">{s.label}</span>
             <span className="m-only">{s.short}</span>

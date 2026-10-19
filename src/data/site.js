@@ -7,12 +7,13 @@ export const WHATSAPP_NUMBER = '2349040071855'
 // Served from public/ — exported from the "CV / A4 print" frames in Figma.
 export const CV_PDF_URL = '/Damilola-Olowo-CV.pdf'
 
-// TODO: add profile URLs — the design names the networks but not the links.
+// Entries without an href are hidden in the footer until a URL is added.
+// TODO: add Dribbble and LinkedIn profile URLs.
 export const SOCIALS = [
-  { label: 'Dribbble', short: 'Dribbble', href: '#' },
-  { label: 'Instagram', short: 'Instagram', href: '#' },
-  { label: 'LinkedIn', short: 'LinkedIn', href: '#' },
-  { label: 'Twitter / X', short: 'X', href: '#' },
+  { label: 'Dribbble', short: 'Dribbble', href: '' },
+  { label: 'Instagram', short: 'Instagram', href: 'https://www.instagram.com/damidesign__/' },
+  { label: 'LinkedIn', short: 'LinkedIn', href: '' },
+  { label: 'Twitter / X', short: 'X', href: 'https://x.com/damidesign_' },
 ]
 
 export const NAV_LINKS = [
