@@ -1,9 +1,8 @@
 // Contact details and links shared across the site.
 export const EMAIL = 'info@damidesigns.com'
 
-// TODO: confirm the WhatsApp number — the CV lists "0904007185", which looks one digit short.
-// Use international format without "+" or spaces (wa.me requirement).
-export const WHATSAPP_NUMBER = '234904007185'
+// International format without "+" or spaces (wa.me requirement).
+export const WHATSAPP_NUMBER = '2349040071855'
 
 // Served from public/ — exported from the "CV / A4 print" frames in Figma.
 export const CV_PDF_URL = '/Damilola-Olowo-CV.pdf'

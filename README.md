@@ -37,7 +37,6 @@ The project form doesn't store anything. Submitting opens WhatsApp (`wa.me`) wit
 
 ## Before launch
 
-- [ ] Confirm `WHATSAPP_NUMBER` in `src/data/site.js` (the CV lists `0904007185`, which looks one digit short).
 - [ ] Add the Dribbble / Instagram / LinkedIn / X profile URLs in `src/data/site.js`.
 - [ ] Review the FAQ answers. Only the first answer comes from the design; I wrote the other four.
 - [ ] Replace the "D" portrait placeholder with the real photo (the Figma layer is named "replace fill with IMG_4833").

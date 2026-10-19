@@ -3,7 +3,7 @@ import { CV_PDF_URL } from '../data/site'
 
 const CONTACTS = [
   { label: 'Abuja, Kaduna, Nigeria' },
-  { label: '0904007185', href: 'tel:0904007185' },
+  { label: '09040071855', href: 'tel:+2349040071855' },
   { label: 'info@damidesigns.com', href: 'mailto:info@damidesigns.com' },
   { label: 'damidolowo@gmail.com', href: 'mailto:damidolowo@gmail.com' },
   { label: 'damidesigns.com', href: 'https://damidesigns.com' },
