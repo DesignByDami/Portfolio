@@ -9,7 +9,15 @@ const CONTACTS = [
   { label: 'damidesigns.com', href: 'https://damidesigns.com' },
 ]
 
-const EXPERIENCE = [
+const EXPERIENCE_AND_PROJECTS = [
+  {
+    title: 'Lead UX/UI Designer',
+    org: 'Agro Mark — Remote',
+    dates: 'November 2025 – Present',
+    points: [
+      'Developed wireframes, interactive prototypes, and UI templates for a specialized agricultural web platform, focusing on solving specific user workflow problems.',
+    ],
+  },
   {
     title: 'Lead UX/UI Designer',
     org: 'Sunflex Ride — Remote',
@@ -33,31 +41,20 @@ const EXPERIENCE = [
     ],
   },
   {
+    title: 'Frontend Developer & UI Implementer',
+    org: 'D.O. Naija Cargo',
+    dates: 'March 2026 – Present',
+    points: [
+      'Built and deployed the frontend interface for a logistics and cargo tracking platform, integrating a React/Supabase backend while maintaining strict adherence to the original UI design.',
+    ],
+  },
+  {
     title: 'UX/UI Designer & Frontend Developer',
     org: 'WorkSyncAfrica — Remote',
     dates: 'June 2026 – Present',
     points: [
       'Led the design of web interfaces for a business applications platform, focusing heavily on user experience, accessibility, and smooth technical implementation.',
       'Conducted usability testing and translated findings into actionable design improvements for complex software solutions.',
-    ],
-  },
-]
-
-const PROJECTS = [
-  {
-    title: 'Lead UX/UI Designer',
-    org: 'Agro Mark — Remote',
-    dates: 'November 2025 – Present',
-    points: [
-      'Developed wireframes, interactive prototypes, and UI templates for a specialized agricultural web platform, focusing on solving specific user workflow problems.',
-    ],
-  },
-  {
-    title: 'Frontend Developer & UI Implementer',
-    org: 'D.O. Naija Cargo',
-    dates: 'March 2026 – Present',
-    points: [
-      'Built and deployed the frontend interface for a logistics and cargo tracking platform, integrating a React/Supabase backend while maintaining strict adherence to the original UI design.',
     ],
   },
 ]
@@ -146,8 +143,7 @@ export default function Cv() {
               Detail-oriented UX/UI Designer with over 2 years of professional experience driving the end-to-end design process for web and mobile applications. Expertise in user-centered design methodologies, comprehensive user research, and translating complex business requirements into intuitive, high-fidelity Figma prototypes. Brings a unique advantage with hands-on frontend development experience (HTML/CSS), ensuring all digital solutions are technically feasible, highly accessible (WCAG), and seamlessly handed off to development teams. Proven ability to thrive in fully remote, asynchronous, cross-functional global teams.
             </p>
           </section>
-          <Roles title="Experience" roles={EXPERIENCE} />
-          <Roles title="Projects" roles={PROJECTS} />
+          <Roles title="Experience & Projects" roles={EXPERIENCE_AND_PROJECTS} />
         </div>
 
         <aside className="cv__side">
